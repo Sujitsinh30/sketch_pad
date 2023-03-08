@@ -18,17 +18,18 @@
         <div class="col-md-12">    
                 <label for="grid_col">COLS:</label>
                 <input type="number" id="input1" min="1">
-            <button id="sub_btn" onclick="show();hide()">Show</button>
+            <button id="sub_btn" onclick="hide()">Show</button>
         </div>
     </div>
-    <div id="show" style="visibility: hidden;">
+    <div id="show">
             <label for="color">Choose Color:</label>
             <br><input type="color" id="color">
-            <button id="ers_btn">Erase</button>
+            <button id="ers_btn" value="ON">Erase</button>
+            <button id="reset" onclick="window.location.reload()">Reset</button>
+    </div>
             <div class="sketch_pad d-flex justify-content-center" id="Pad">
                 <table id="table"></table>
             </div>
-    </div>
     <script src="./script.js"></script>
 </body>
 </html>

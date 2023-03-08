@@ -13,11 +13,27 @@
     width: 6em;
     height: 5rem;
 }
-#ers_btn
+#reset
 {
     width: 5em;
+    background-color: #1a7cd9;
+    color: #ffffff;
+    border: 1px solid #1a7cd9; 
 }
-td.box {
+#ers_btn
+{
+    outline:none;
+    background-color: orange;
+    color: #ffffff;
+    width: 5em;
+    border: none; 
+}
+#show
+{
+    visibility: hidden;
+    height: 10em;
+}
+td.cells {
     border: 1px solid black;
     background: white;
     padding: 2vw;
