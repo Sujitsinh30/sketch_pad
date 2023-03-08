@@ -28,19 +28,18 @@ function hide()
             }
         }
         pad.appendChild(grids);
-        condition();
+        paint();
     }
 }
-function condition() 
+function paint() 
 {
     flag = true;
-    eraser.disabled = false;
     if (!color == "") 
     {
         let cells = document.querySelectorAll('.cells');
-        for (let stat = 0; stat < cells.length; stat++) 
+        for (let brush = 0; brush < cells.length; brush++) 
         {
-            cells[stat].addEventListener('mouseover', () => { onover(cells, stat, flag) });
+            cells[brush].addEventListener('mouseover', () => { mousehover(cells, brush, flag) });
         }
     }
 }
@@ -62,25 +61,24 @@ eraser.addEventListener("click", () => {
         eraser.style.backgroundColor = "orange";
         eraser.value = "ON";
         flag = true;
-        condition();
+        paint();
     }
 });
-function onover(arr, num, flag) 
+function mousehover(arr, brush, flag) 
 {
-    if (flag) 
+    if (flag==true) 
     {
         if (colorvalue.length <= 10) 
         {
-            arr[num].style.background = color.value;
-            colorvalue.push(num);
+            arr[brush].style.background = color.value;
+            colorvalue.push(brush);
             console.log(colorvalue + " Length :" + colorvalue.length)
             if (colorvalue.length > 10) 
             {
-                let GoOutEle = colorvalue.shift();
-                arr[GoOutEle].style.background = "black";
-                arr[num].style.background = color.value;
+                let uptorten = colorvalue.shift();
+                arr[uptorten].style.background = "black";
+                arr[brush].style.background = color.value;
             }
         }
     }
-
 }
